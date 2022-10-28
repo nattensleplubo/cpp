@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/22 13:01:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/10/28 10:35:08 by ngobert          ###   ########.fr       */
+/*   Created: 2022/10/28 16:15:18 by ngobert           #+#    #+#             */
+/*   Updated: 2022/10/28 16:49:44 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#include "includes.h"
 
-int	main(int argc, char **argv)
+int	main(void)
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
+	std::string	input;
+	PhoneBook	phonebook;
+	
+	while (1)
 	{
-		for (int j = 1; j < argc; j++)
-		{
-			for (size_t i = 0; i < std::strlen(argv[j]); i++)
-				std::putchar(std::toupper(argv[j][i]));
-			std::cout << " ";
-		}
-		std::cout << std::endl;
+		std::cout << RED << "Phonebook >> " << CRESET;
+		std::getline(std::cin, input);
+		std::cout << input << std::endl;
 	}
+	
 }
