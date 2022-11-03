@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:29:49 by ngobert           #+#    #+#             */
-/*   Updated: 2022/10/28 16:30:21 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/03 14:26:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 class Contact
 {
-private:
-	/* data */
-public:
-	Contact(/* args */);
-	~Contact();
+	private:
+		/* args */
+	public:
+		Contact(/* args */);
+		~Contact();
 };
 
 #endif

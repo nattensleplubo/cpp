@@ -6,11 +6,19 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:15:18 by ngobert           #+#    #+#             */
-/*   Updated: 2022/10/28 19:42:53 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/03 15:19:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes.h"
+#include <iostream>
+#include <iomanip>
+#include "PhoneBook.hpp"
+#include "colors.h"
+
+void	do_add(PhoneBook *phonebook)
+{
+	std::string	
+}
 
 void	do_command(std::string input, PhoneBook *phonebook)
 {
