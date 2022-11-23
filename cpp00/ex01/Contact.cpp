@@ -6,12 +6,13 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:30:46 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 14:39:32 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/23 14:55:18 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Contact.hpp"
 #include <iostream>
+#include <iomanip>
 
 Contact::Contact(void)
 {
@@ -43,6 +44,15 @@ void	Contact::printString(std::string str)
 		while (i++ + str.size() < 10)
 			std::cout << " ";
 		std::cout << str;
+	}
+	else
+	{
+		while (i < 9)
+		{
+			std::cout << str[i];
+			i++;
+		}
+		std::cout << ".";
 	}
 }
 

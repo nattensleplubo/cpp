@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 14:22:50 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/23 15:47:54 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	PhoneBook::print_contacts()
 	
 	std::cout << " ___________________________________________ " <<  std::endl;
 	std::cout << "|          |          |          |          |" <<  std::endl;
-	std::cout << "|  INDEX   |FIRST NAME|LAST NAME | NICKNAME |" <<  std::endl;
+	std::cout << "|   INDX   |FIRST NAME| LST NAME | NICKNAME |" <<  std::endl;
 	std::cout << "|__________|__________|__________|__________|" <<  std::endl;
 	if (this->_IsPhoneBookfull == 0)
 	{
