@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 15:47:54 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/28 11:45:40 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,11 @@ PhoneBook::PhoneBook(void)
 {
 	this->_number_of_contacts = 0;
 	this->_IsPhoneBookfull = 0;
-	std::cout << "Constructor called" << std::endl;
 }
 
 PhoneBook::~PhoneBook(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 int	PhoneBook::getNbOfContacts()

@@ -1,8 +1,7 @@
-SRC = Contact.cpp \
+SRC = Zombie.cpp \
 	main.cpp \
-	PhoneBook.cpp \
 
-NAME = phonebook
+NAME = Zombie
 
 CXX = c++
 

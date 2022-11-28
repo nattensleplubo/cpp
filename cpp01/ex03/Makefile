@@ -1,8 +1,9 @@
-SRC = Contact.cpp \
-	main.cpp \
-	PhoneBook.cpp \
+SRC =	HumanA.cpp \
+		HumanB.cpp \
+		Weapon.cpp \
+		main.cpp \
 
-NAME = phonebook
+NAME = Human
 
 CXX = c++
 

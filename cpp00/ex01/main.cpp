@@ -6,12 +6,13 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:15:18 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 13:11:19 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/28 11:57:37 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
 #include "PhoneBook.hpp"
 #include "colors.h"
 
@@ -20,7 +21,6 @@ void	make_contact(PhoneBook *phonebook, std::string *input)
 	int	nb_contacts;
 
 	nb_contacts = phonebook->getNbOfContacts();
-	std::cout << nb_contacts << std::endl;
 	phonebook->setContact(input, nb_contacts);
 	phonebook->setNbOfContacts();
 }
@@ -28,17 +28,32 @@ void	make_contact(PhoneBook *phonebook, std::string *input)
 void	do_add(PhoneBook *phonebook)
 {
 	std::string	input[5];
-
-	std::cout << "First name : ";
-	std::getline(std::cin, input[0]);
-	std::cout << "Last name : ";
-	std::getline(std::cin, input[1]);
-	std::cout << "Nickname : ";
-	std::getline(std::cin, input[2]);
-	std::cout << "Phone number : ";
-	std::getline(std::cin, input[3]);
-	std::cout << "Darkest Secret : ";
-	std::getline(std::cin, input[4]);
+	
+	while (input[0].size() == 0)
+	{
+		std::cout << "First name : ";
+		std::getline(std::cin, input[0]);
+	}
+	while (input[1].size() == 0)
+	{
+		std::cout << "Last name : ";
+		std::getline(std::cin, input[1]);
+	}
+	while (input[2].size() == 0)
+	{
+		std::cout << "Nickname : ";
+		std::getline(std::cin, input[2]);
+	}
+	while (input[3].size() == 0)
+	{
+		std::cout << "Phone number : ";
+		std::getline(std::cin, input[3]);
+	}
+	while (input[4].size() == 0)
+	{
+		std::cout << "Darkest Secret : ";
+		std::getline(std::cin, input[4]);
+	}
 	make_contact(phonebook, input);
 }
 
@@ -49,7 +64,7 @@ void	do_command(std::string input, PhoneBook *phonebook)
 	else if (input == "SEARCH")
 		phonebook->print_contacts();
 	else if (input == "EXIT")
-		exit (0);
+		std::exit(0);
 	else
 		std::cout << "Command not found." << std::endl;
 }
@@ -59,7 +74,7 @@ int	main(void)
 	std::string	input;
 	PhoneBook	phonebook;
 	
-	while (1)
+	while (input != "EXIT")
 	{
 		std::cout << RED << "Phonebook >> " << CRESET;
 		std::getline(std::cin, input);

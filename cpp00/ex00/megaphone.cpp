@@ -6,12 +6,13 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:01:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/10/28 10:35:08 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/28 11:34:50 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <cstring>
+#include <cstdio>
 
 int	main(int argc, char **argv)
 {

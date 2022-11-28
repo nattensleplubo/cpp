@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:30:46 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 14:55:18 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/11/28 11:41:15 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 Contact::Contact(void)
 {
-	std::cout << "Constructor called" << std::endl;
+	return ;
 }
 
 Contact::~Contact(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	return ;
 }
 
 int	Contact::setContact(std::string _first_name_, std::string _last_name_, std::string _nickname_, std::string _phone_number_, std::string _darkest_secret_)

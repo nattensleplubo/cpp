@@ -1,8 +1,6 @@
-SRC = Contact.cpp \
-	main.cpp \
-	PhoneBook.cpp \
+SRC = main.cpp
 
-NAME = phonebook
+NAME = Brain
 
 CXX = c++
 
