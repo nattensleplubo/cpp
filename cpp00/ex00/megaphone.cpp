@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 13:01:22 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/28 11:34:50 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/01 16:17:54 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 		{
 			for (size_t i = 0; i < std::strlen(argv[j]); i++)
 				std::putchar(std::toupper(argv[j][i]));
-			std::cout << " ";
 		}
 		std::cout << std::endl;
 	}
