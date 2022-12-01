@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:29:49 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 14:23:03 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/01 16:38:26 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ class Contact
 			
 		void	print_self(int i);
 		void	printString(std::string str);
+		void	printAllInfos();
 };
 
 #endif

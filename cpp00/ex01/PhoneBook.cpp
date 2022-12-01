@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/28 11:45:40 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/01 16:42:37 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,17 @@ void	PhoneBook::setNbOfContacts()
 		this->_number_of_contacts = 0;
 	else
 		this->_number_of_contacts++;
+}
+
+void	PhoneBook::askOneContact()
+{
+	int n = 0;
+
+	if (n > this->_number_of_contacts)
+		return ;
+	else if (this->_IsPhoneBookfull && n > this->_number_of_contacts)
+		return ;
+	this->_contacts[n].printAllInfos();
 }
 
 void	PhoneBook::print_contacts()

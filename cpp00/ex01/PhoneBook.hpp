@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:26:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/23 13:10:50 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/01 16:41:40 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class PhoneBook
 		void	setContact(std::string *input, int nb_contacts);
 		void	setNbOfContacts();
 		void	print_contacts();
+		void		askOneContact();
 };
 
 #endif
