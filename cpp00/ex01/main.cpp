@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:15:18 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/01 16:43:39 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/02 13:43:07 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	do_command(std::string input, PhoneBook *phonebook)
 	else if (input == "SEARCH")
 	{
 		phonebook->print_contacts();
-		phonebook->askOneContact();
 	}
 	else if (input == "EXIT")
 		std::exit(0);

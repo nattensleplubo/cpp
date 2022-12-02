@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:30:46 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/01 16:40:32 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/02 13:35:31 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,12 @@ void	Contact::printAllInfos()
 	std::cout << "Nickname : " << this->_nickname_ << std::endl;
 	std::cout << "Phone number : " << this->_phone_number_ << std::endl;
 	std::cout << "Darkest secret : " << this->_darkest_secret_ << std::endl;
+}
+
+int	Contact::contactExists()
+{
+	if (this->_first_name_.size() != 0)
+		return (1);
+	else
+		return (0);
 }

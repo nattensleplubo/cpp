@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/01 16:42:37 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/02 13:52:08 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,19 +48,41 @@ void	PhoneBook::setNbOfContacts()
 
 void	PhoneBook::askOneContact()
 {
-	int n = 0;
+	std::string	number;
+	int			n;
 
-	if (n > this->_number_of_contacts)
-		return ;
-	else if (this->_IsPhoneBookfull && n > this->_number_of_contacts)
-		return ;
-	this->_contacts[n].printAllInfos();
+	std::cout << "Which contact > ";
+	std::getline(std::cin, number);
+	n = std::atoi(number.c_str());
+	while (1)
+	{
+		if (n > 7)
+		{
+			std::cout << "There can only be 8 contacts, please enter a number between 0 and 7" << std::endl;
+			return ;
+		}
+		if (this->_contacts[n].contactExists())
+		{
+			this->_contacts[n].printAllInfos();
+			return ;
+		}
+		else
+		{
+			std::cout << "Sorry this contact does not exist" << std::endl;
+			return ;
+		}
+	}
 }
 
 void	PhoneBook::print_contacts()
 {
 	int	i = 0;
 	
+	if (!this->_contacts[0].contactExists())
+	{
+		std::cout << "Sorry no contact is available for research, try adding one using command \"ADD\"" << std::endl;
+		return ;
+	}
 	std::cout << " ___________________________________________ " <<  std::endl;
 	std::cout << "|          |          |          |          |" <<  std::endl;
 	std::cout << "|   INDX   |FIRST NAME| LST NAME | NICKNAME |" <<  std::endl;
@@ -81,4 +103,5 @@ void	PhoneBook::print_contacts()
 				i++;
 		}
 	}
+	this->askOneContact();
 }
