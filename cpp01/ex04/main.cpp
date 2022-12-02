@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:43:34 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/01 15:54:29 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/02 14:04:53 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main(int argc, char **argv)
 	std::string		fileNameDotReplace;
 	std::string		buf, tmp;
 
-	int				startPos = 0;
+	size_t			startPos = 0;
 	
 	std::string		str1 = argv[2];
 	std::string		str2 = argv[3];
@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 
 	while (1)
 	{
-		int	i = tmp.find(str1, startPos);
+		size_t	i = tmp.find(str1, startPos);
 		startPos = i + str1.size();
 		if (i >= std::string::npos)
 			break ;
