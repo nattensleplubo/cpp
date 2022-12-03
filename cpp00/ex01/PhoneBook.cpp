@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/02 13:52:08 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/03 13:58:49 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ void	PhoneBook::askOneContact()
 	int			n;
 
 	std::cout << "Which contact > ";
-	std::getline(std::cin, number);
+	if (!std::getline(std::cin, number))
+		return ;
+	if (number == "")
+		return ;
 	n = std::atoi(number.c_str());
 	while (1)
 	{

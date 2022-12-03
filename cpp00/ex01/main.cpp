@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:15:18 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/02 13:43:07 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/02 18:42:54 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,27 +32,32 @@ void	do_add(PhoneBook *phonebook)
 	while (input[0].size() == 0)
 	{
 		std::cout << "First name : ";
-		std::getline(std::cin, input[0]);
+		if (!std::getline(std::cin, input[0]))
+			return ;
 	}
 	while (input[1].size() == 0)
 	{
 		std::cout << "Last name : ";
-		std::getline(std::cin, input[1]);
+		if (!std::getline(std::cin, input[1]))
+			return ;
 	}
 	while (input[2].size() == 0)
 	{
 		std::cout << "Nickname : ";
-		std::getline(std::cin, input[2]);
+		if (!std::getline(std::cin, input[2]))
+			return ;
 	}
 	while (input[3].size() == 0)
 	{
 		std::cout << "Phone number : ";
-		std::getline(std::cin, input[3]);
+		if (!std::getline(std::cin, input[3]))
+			return ;
 	}
 	while (input[4].size() == 0)
 	{
 		std::cout << "Darkest Secret : ";
-		std::getline(std::cin, input[4]);
+		if (!std::getline(std::cin, input[4]))
+			return ;
 	}
 	make_contact(phonebook, input);
 }
@@ -79,7 +84,11 @@ int	main(void)
 	while (input != "EXIT")
 	{
 		std::cout << RED << "Phonebook >> " << CRESET;
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			std::cout << "Bye bye ;)" << std::endl;
+			return (0);
+		}
 		do_command(input, &phonebook);
 	}
 }
