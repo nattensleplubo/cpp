@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:26:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/01 16:41:40 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/05 10:06:52 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # include "Contact.hpp"
 # include <iostream>
+# include <cstdlib>
 
 class PhoneBook
 {

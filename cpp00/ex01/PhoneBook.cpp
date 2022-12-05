@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:27:14 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/03 13:58:49 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/05 11:56:16 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,17 @@ void	PhoneBook::askOneContact()
 		return ;
 	if (number == "")
 		return ;
+
+    for(unsigned long i = 0; i < number.size(); i++)
+	{
+    	if(number[i] < '0' or number[i] > '9')
+			return ;
+	}
 	n = std::atoi(number.c_str());
 	while (1)
 	{
+		if (n < 0)
+			return ;
 		if (n > 7)
 		{
 			std::cout << "There can only be 8 contacts, please enter a number between 0 and 7" << std::endl;

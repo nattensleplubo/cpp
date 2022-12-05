@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/28 16:30:46 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/02 13:35:31 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/05 11:45:03 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	Contact::printString(std::string str)
 {
 	int	i = 0;
 	
-	if (str.size() < 10)
+	if (str.size() <= 10)
 	{
 		while (i++ + str.size() < 10)
 			std::cout << " ";
