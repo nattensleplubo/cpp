@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 13:42:58 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/05 14:54:46 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/08 13:20:35 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,23 @@
 
 # define FIXED_HPP
 
+#include <iostream>
+
 class Fixed
 {
-private:
-	/* data */
-public:
-	Fixed(/* args */);
-	~Fixed();
+	private:
+		int					_raw_val;
+		static const int	_bits_val = 8;
+	public:
+		Fixed();
+		Fixed(const Fixed &fixd);
+		~Fixed();
+		Fixed& operator=(const Fixed &fixd);
+
+		int 	getRawBits( void ) const;
+		void	setRawBits( int const raw);
 };
 
-Fixed::Fixed(/* args */)
-{
-}
-
-Fixed::~Fixed()
-{
-}
 
 
 #endif
