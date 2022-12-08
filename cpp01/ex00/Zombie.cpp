@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 19:20:55 by ngobert           #+#    #+#             */
-/*   Updated: 2022/11/25 23:24:16 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/08 14:45:55 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Zombie::Zombie(void)
 
 Zombie::Zombie(std::string name) : _name(name)
 {
-	this->announce();
+	return ;
 }
 
 Zombie::~Zombie()

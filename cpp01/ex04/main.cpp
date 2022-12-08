@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/01 11:43:34 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/02 18:35:14 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/08 15:00:55 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 	fileNameDotReplace = argv[1];
 	fileNameDotReplace.append(".replace");
 
-	outfile.open(fileNameDotReplace);
+	outfile.open(fileNameDotReplace.c_str());
 	infile.open(argv[1]);
 	
 	while (std::getline(infile, buf))
