@@ -6,16 +6,29 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:01:27 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/14 14:03:46 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/15 13:21:59 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <cmath>
 
 Fixed::Fixed()
 {
 	this->_raw_val = 0;
 	std::cout << "Default constructor called" << std::endl;
+}
+
+Fixed::Fixed(const int num)
+{
+	_raw_val = num << this->_bits_val;
+	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const float num)
+{
+	std::cout << "Float constructor called" << std::endl;
+	_raw_val = roundf(num *(1 << _bits_val));
 }
 
 Fixed::Fixed(const Fixed &fixd)
@@ -49,3 +62,19 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_raw_val = raw;
 }
+
+float	Fixed::toFloat(void)const
+{
+	return (this->_raw_val / (float)(1 << _bits_val));
+}
+
+int	Fixed::toInt(void) const
+{
+	return (this->_raw_val >> _bits_val);
+}
+
+std::ostream & operator<<(std::ostream &os, const Fixed &rhs)
+{
+	os << rhs.toFloat();
+	return (os);
+};

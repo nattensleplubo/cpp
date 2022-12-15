@@ -6,12 +6,12 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/14 14:00:51 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/14 14:01:16 by ngobert          ###   ########.fr       */
+/*   Updated: 2022/12/14 16:39:42 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
+#include "Fixed.hpp"
 
 int main( void )
 {
