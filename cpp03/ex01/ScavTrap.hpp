@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/21 16:43:25 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/23 18:25:56 by ngobert          ###   ########.fr       */
+/*   Created: 2022/12/23 17:36:44 by ngobert           #+#    #+#             */
+/*   Updated: 2022/12/23 17:42:35 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-int main(void)
+#ifndef SCAVTRAP_HPP
+
+# define SCAVTRAP_HPP
+
+class ScavTrap : public ClapTrap
 {
-	ScavTrap robot("zizou");
-	ScavTrap bis(robot);
+	public:
+		ScavTrap();
+		ScavTrap(const ScavTrap &scav);
+		ScavTrap(std::string name);
+		ScavTrap &operator=(const ScavTrap& copy);
+		~ScavTrap();
 
-	bis = robot;
-	
-	robot.attack("zazou");
-	robot.attack("zazou");
-	
-	robot.takeDamage(5);
-	robot.beRepaired(10);
-	robot.takeDamage(50);
-	robot.takeDamage(50);
-	robot.beRepaired(10);
+		void	guardGate();
+		void	attack(const std::string& target);
+};
 
-	robot.attack("zazou");
-	robot.guardGate();
-	
-	return (0);
-}
+#endif
