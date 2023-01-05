@@ -5,57 +5,49 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/05 12:09:12 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/05 12:09:22 by ngobert          ###   ########.fr       */
+/*   Created: 2023/01/04 12:26:11 by ngobert           #+#    #+#             */
+/*   Updated: 2023/01/05 13:15:09 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
-#include "Cat.hpp"
+#include "Bureaucrat.hpp"
 
-int main()
+int	main(void)
 {
-	int k = 0;
-	const AAnimal* j = new Dog();
-	const AAnimal* i = new Cat();
-	delete j;//should not create a leak
-	delete i;
-
-	// AAnimal anil = new AAnimal();
-
-	AAnimal * arrayA_Animal[4];
-	while (k < 2)
+	Bureaucrat	*test;
+	try
 	{
-		arrayA_Animal[k] = new Dog();
-		k++;
+		test = new Bureaucrat("test", 0);
 	}
-	while (k < 4)
+	catch (std::exception &e)
 	{
-		arrayA_Animal[k] = new Cat();
-		k++;
+		std::cout << e.what() << std::endl;
 	}
-	k = 0;
-	while (k < 4)
+	try
 	{
-		std::cout << "AAnimal : " << arrayA_Animal[k]->getType() << std::endl;
-		arrayA_Animal[k]->makeSound();
-		k++;
+		test = new Bureaucrat("test", 151);
 	}
-	k = 0;
-	while(k < 4)
+	catch (std::exception &e)
 	{
-		delete arrayA_Animal[k];
-		k++;
+		std::cout << e.what() << std::endl;
 	}
-	
-	Cat chat_vnr;
+	try
 	{
-		Cat tmp = chat_vnr;
+		test = new Bureaucrat("test", 1);
+		test->incrementGrade();
 	}
-	Dog chien_vnr;
+	catch (std::exception &e)
 	{
-		Dog tmp = chien_vnr;
+		std::cout << e.what() << std::endl;
 	}
-
+	try
+	{
+		test = new Bureaucrat("test", 150);
+		test->decrementGrade();
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
 }
