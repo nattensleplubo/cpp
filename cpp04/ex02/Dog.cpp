@@ -1,43 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/28 17:53:21 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/05 10:48:35 by ngobert          ###   ########.fr       */
+/*   Created: 2022/12/28 17:53:29 by ngobert           #+#    #+#             */
+/*   Updated: 2023/01/05 10:58:43 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
+#include "AAnimal.hpp"
 
-Cat::Cat()
+Dog::Dog()
 {
-	_type = "Cat";
+	_type = "Dog";
 	this->_brain = new Brain();
 	std::cout << _type << " : default constructor called" << std::endl;
 }
 
-Cat::Cat(const Cat& src) : Animal(src)
+Dog::Dog(const Dog& src) : AAnimal(src)
 {
 	std::cout << _type << " : copy constructor called" << std::endl;	
 }
 
-Cat & Cat::operator=(const Cat& rhs)
+Dog & Dog::operator=(const Dog& rhs)
 {
-	Animal::operator=(rhs);
+	AAnimal::operator=(rhs);
 	std::cout << _type << " : assignment constructor called" << std::endl;
 	return (*this);
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
 	delete this->_brain;
 	std::cout << _type << " : default destructor called" << std::endl;
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Cat meow" << std::endl;
+	std::cout << "Dog woof" << std::endl;
 }

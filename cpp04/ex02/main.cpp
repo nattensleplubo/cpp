@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 10:43:08 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/05 10:43:09 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/05 11:22:04 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,33 +16,35 @@
 int main()
 {
 	int k = 0;
-	const Animal* j = new Dog();
-	const Animal* i = new Cat();
+	const AAnimal* j = new Dog();
+	const AAnimal* i = new Cat();
 	delete j;//should not create a leak
 	delete i;
 
-	Animal * arrayAnimal[4];
+	// AAnimal anil = new AAnimal();
+
+	AAnimal * arrayA_Animal[4];
 	while (k < 2)
 	{
-		arrayAnimal[k] = new Dog();
+		arrayA_Animal[k] = new Dog();
 		k++;
 	}
 	while (k < 4)
 	{
-		arrayAnimal[k] = new Cat();
+		arrayA_Animal[k] = new Cat();
 		k++;
 	}
 	k = 0;
 	while (k < 4)
 	{
-		std::cout << "Animal : " << arrayAnimal[k]->getType() << std::endl;
-		arrayAnimal[k]->makeSound();
+		std::cout << "AAnimal : " << arrayA_Animal[k]->getType() << std::endl;
+		arrayA_Animal[k]->makeSound();
 		k++;
 	}
 	k = 0;
 	while(k < 4)
 	{
-		delete arrayAnimal[k];
+		delete arrayA_Animal[k];
 		k++;
 	}
 	
@@ -57,3 +59,6 @@ int main()
 
 	return 0;
 }
+
+// Why are the Dog and Cat classes abstract?
+// Because they are not supposed to be instanciated, only their children are.

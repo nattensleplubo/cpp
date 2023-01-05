@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/28 17:53:29 by ngobert           #+#    #+#             */
-/*   Updated: 2022/12/28 18:36:25 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/05 10:48:42 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 Dog::Dog()
 {
 	_type = "Dog";
+	this->_brain = new Brain();
 	std::cout << _type << " : default constructor called" << std::endl;
 }
 
@@ -33,6 +34,7 @@ Dog & Dog::operator=(const Dog& rhs)
 
 Dog::~Dog()
 {
+	delete this->_brain;
 	std::cout << _type << " : default destructor called" << std::endl;
 }
 
