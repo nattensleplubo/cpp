@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 12:26:13 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/09 18:53:41 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/10 17:11:22 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ class Bureaucrat
 		void				decrementGrade();
 
 		void				signForm(Form &form) const;
+		void				executeForm(Form const & form) const;
 
 		class GradeTooHighException : public std::exception
 		{

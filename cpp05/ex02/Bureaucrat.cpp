@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 12:26:07 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/06 17:18:06 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/10 17:12:02 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,3 +94,5 @@ void				Bureaucrat::signForm(Form &form) const
 		std::cout << _name << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
 	}
 }
+
+void	Bureaucrat
