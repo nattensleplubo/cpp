@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 13:46:58 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/06 17:13:08 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/10 16:48:23 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,16 @@ const char* Form::GradeTooLowException::what() const throw()
 	return "Grade too low";
 }
 
+const char* Form::AlreadySigned::what() const throw()
+{
+	return "Already signed";
+}
+
+const char* Form::NotSignedYet::what() const throw()
+{
+	return "Not signed yet";
+}
+
 std::string const	&Form::getName() const
 {
 	return (this->_name);
@@ -94,3 +104,24 @@ bool	Form::getSigned() const
 {
 	return (this->_signed);
 }
+
+bool	Form::checkExecRequirements(Bureaucrat const &Buro, Form const &form) const
+{
+	if (this->_signed == 0)
+		throw Form::NotSignedYet();
+	if (Buro.getGrade() > form.getGradeToExec())
+		throw Form::GradeTooLowException();
+	else
+		return true;
+}
+
+bool Form::checkSignRequirements(Bureaucrat const &Buro, Form const &form) const
+{
+	if (this->_signed == 1)
+		throw Form::AlreadySigned();
+	if (Buro.getGrade() > form.getGradeToSign())
+		throw Form::GradeTooLowException();
+	else 
+		return true;
+}
+
