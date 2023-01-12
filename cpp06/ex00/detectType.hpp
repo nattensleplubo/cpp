@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   detectType.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 16:36:38 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/12 13:39:17 by ngobert          ###   ########.fr       */
+/*   Created: 2023/01/11 21:16:10 by ngobert           #+#    #+#             */
+/*   Updated: 2023/01/11 21:20:30 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "detectType.hpp"
+#ifndef DETECTTYPE_HPP
 
-int main (int argc, char **argv)
-{
-	if (argc == 2)
-	{
-		std::string str(argv[1]);
-		int type = -1;
+# define DETECTTYPE_HPP
 
-		type = detectType(str);
-	}
-	else
-		std::cout << "Wrong number of arguments" << std::endl;
-}
+# include <iostream>
+
+# define CHAR 0
+# define INT 1
+# define FLOAT 2
+# define DOUBLE 3
+
+int	detectType(std::string str);
+
+#endif
