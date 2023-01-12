@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   detectType.hpp                                     :+:      :+:    :+:   */
+/*   convertType.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/11 21:16:10 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/12 16:05:03 by ngobert          ###   ########.fr       */
+/*   Created: 2023/01/12 14:52:41 by ngobert           #+#    #+#             */
+/*   Updated: 2023/01/12 16:06:33 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DETECTTYPE_HPP
+#ifndef CONVERTTYPE_HPP
 
-# define DETECTTYPE_HPP
+# define CONVERTTYPE_HPP
 
-# include <iostream>
+#include <iostream>
+#include <limits.h>
+#include <float.h>
+#include <string>
+#include <stdlib.h>
 
-# define CHAR 0
-# define INT 1
-# define FLOAT 2
-# define DOUBLE 3
-
-int	detectType(std::string str);
-bool	is_special_type(std::string str);
+void	convert_to_char(std::string str);
+void	convert_to_int(std::string str);
+void	convert_to_float(std::string str);
+void	convert_to_double(std::string str);
+void	do_special_type(std::string str);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: ngobert <ngobert@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/11 21:16:00 by ngobert           #+#    #+#             */
-/*   Updated: 2023/01/12 13:48:17 by ngobert          ###   ########.fr       */
+/*   Updated: 2023/01/12 16:04:40 by ngobert          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ bool	ft_ischar(std::string str)
 bool	ft_isint(std::string str)
 {
 	int j=0;
-	for (int i = 0; str[i] != '+' || str[i] != '-'; i++)
+	for (int i = 0; str[i] && (str[i] != '+' || str[i] != '-'); i++)
 		;
 	while (str[j])
 	{
@@ -89,4 +89,13 @@ int	detectType(std::string str)
 		type = FLOAT;
 	else if (ft_isdouble(str))
 		type = DOUBLE;
+	return (type);
+}
+
+bool	is_special_type(std::string str)
+{
+	if (str == "nan" || str == "nanf" || str == "+inf" || str == "+inff" || str == "-inf" || str == "-inff")
+		return (true);
+	else
+		return (false);
 }
